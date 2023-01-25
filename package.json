@@ -1,0 +1,8 @@
+{
+  "name": "i2kn-libp2pnode",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:on-meetsys/i2kn-libp2pnode.git",
+  "author": "olivier nerot <olivier.nerot@meetsys.com>",
+  "license": "MIT"
+}
