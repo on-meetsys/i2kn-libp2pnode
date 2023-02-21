@@ -1,9 +1,7 @@
-import os from 'os';
-import path from 'path';
-import { constants, promises as fs } from 'fs';
 import type { Libp2pOptions } from 'libp2p';
 import type { GossipsubEvents } from '@chainsafe/libp2p-gossipsub';
 import type { PubSub, SignedMessage } from '@libp2p/interface-pubsub';
+import files from './files';
 
 async function start(
   privKey: string,

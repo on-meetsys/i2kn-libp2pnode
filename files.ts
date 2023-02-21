@@ -176,44 +176,6 @@ async function loadClear(title:string): Promise<string> {
   return content;
 }
 
-async function eraseDir() {
-  await fs.rmdir(getDir());
-}
-
-function print(url:string) {
-  // Defining a new BrowserWindow Instance
-  const win = new BrowserWindow({
-    show: false,
-    webPreferences: {
-      nodeIntegration: true,
-    },
-  });
-  win.loadURL(url);
-
-  const options = {
-    silent: false,
-    printBackground: true,
-    color: false,
-    margin: {
-      marginType: 'printableArea',
-    },
-    landscape: false,
-    pagesPerSheet: 1,
-    collate: false,
-    copies: 1,
-    header: 'Header of the Page',
-    footer: 'Footer of the Page',
-  };
-
-  win.webContents.on('did-finish-load', () => {
-    win.webContents.print(options, (success, failureReason) => {
-      if (!success) log(failureReason);
-      log('Print Initiated');
-      win.destroy();
-    });
-  });
-}
-
 const files = {
   init,
   createRepo,
@@ -221,8 +183,6 @@ const files = {
   load,
   saveClear, // save a file without encryption
   loadClear, // load a file without encryption
-  eraseDir,
-  print,
 };
 
 export default files;
